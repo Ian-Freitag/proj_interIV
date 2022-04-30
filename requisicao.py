@@ -25,4 +25,4 @@ r.status_code
 
 print(r.text) 
 
-from bs4 import BeautifulSoup
+content = response.content
