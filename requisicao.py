@@ -21,9 +21,11 @@ headers = {
 
 bigbase = []
 
+
+
 page = 1
-while page < 5:
-    url = f'https://www.webmotors.com.br/api/search/car?url=https://www.webmotors.com.br/carros-usados/estoque?{page}kid=1000'
+while page < 3:
+    url = f"https://www.webmotors.com.br/api/search/car?url=https://www.webmotors.com.br/carros-usados%2Festoque%3Flkid%3D1000&actualPage={page}&displayPerPage=100"
 
     r = requests.get(url=url, headers=headers)
     r.status_code
