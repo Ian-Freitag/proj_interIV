@@ -5,6 +5,10 @@ path = 'C:/Users/IAN.FREITAG/Documents/chromedriver'
 driver = webdriver.Chrome(path)
 driver.get(website)
 
-botaoCarros = driver.find_element_by_xpath('//div[@class="sc-gqPbQI ldOiUz"]')
-botaoCarros.click()
+#botaoCarros = driver.find_elements_by_xpath('//div[@class="sc-gqPbQI ldOiUz"]')
+#botaoCarros.click()
 
+matches = driver.find_elements_by_tag_name('h2')
+
+for match in matches:
+    print(match.text)
