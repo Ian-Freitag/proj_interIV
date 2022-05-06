@@ -1,5 +1,5 @@
 import requests
 
-response = requests.get('https://www.webmotors.com.br/carros-usados/estoque?lkid=1000')
+response = requests.get('https://www.kavak.com/br/ordem-menor-preco/carros-usados')
 
 print(response.status_code)
