@@ -25,4 +25,3 @@ conn.commit()
 
 print("tabela criada com sucesso.")
 
-conn.close()
