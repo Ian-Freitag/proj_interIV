@@ -25,7 +25,6 @@ header{
 .logo h2{
     font-weight: bolder;
     font-size: 30px;
-    margin-left: 200px;
 }
 
 .menu{
@@ -41,7 +40,7 @@ header{
     transition: 0.4s;
 }
 .menu a:hover{
-    color: #000851
+    color:rgb(1, 1, 176)
 }
 
 .menu .btn-menu{
@@ -53,12 +52,12 @@ header{
 }
 
 .menu .btn-menu:hover{
-    background-color: #000851;
+    background-color: rgb(1, 1, 176);
     color: white;
 }
 
 section.main{
-    background: linear-gradient( #1CB5E0 0%, 000851# 100%);
+    background: linear-gradient( #1CB5E0 0%, #000851 100%);
     height: 100%;
 }
 
