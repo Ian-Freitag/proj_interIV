@@ -6,6 +6,7 @@ cursor = conn.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS tb_veiculo(
     idVeiculo INTEGER PRIMARY KEY AUTOINCREMENT,
+    idunico INT NOT NULL,
     marca TEXT NOT NULL,
     modelo TEXT NOT NULL,
     versao_veic TEXT NOT NULL,
