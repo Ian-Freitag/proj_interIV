@@ -40,7 +40,7 @@ header{
     transition: 0.4s;
 }
 .menu a:hover{
-    color:rgb(1, 1, 176)
+    color:#1691b3
 }
 
 .menu .btn-menu{
@@ -52,7 +52,7 @@ header{
 }
 
 .menu .btn-menu:hover{
-    background-color: rgb(1, 1, 176);
+    background-color: #1691b3;
     color: white;
 }
 
