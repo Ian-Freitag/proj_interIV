@@ -18,7 +18,7 @@
   .content{
     width: 500px;
     min-height: 560px;    
-    margin: 0px auto;
+    margin: 100px auto;
     position: relative;   
   }
 
@@ -77,6 +77,7 @@
     margin-top: 4px;
     padding: 10px;    
     border: 1px solid #1691b3;
+    
    
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -129,7 +130,7 @@
    
   .link a {
     font-weight: bold;
-    background: #f7f8f1;
+    background: whitesmoke;
     padding: 6px;
     color: #1691b3;
     margin-left: 10px;
@@ -148,6 +149,9 @@
     border: 1px solid #4ab3c6;
   }
 
+  .main {
+    background: linear-gradient( #1CB5E0 0%, #000851 100%);
+  }
   #cadastro, 
 #login{
   position: absolute;
@@ -161,11 +165,11 @@
   -webkit-box-shadow: 5px;
   border-radius: 5px;
    
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.2s;
   -webkit-animation-timing-function: ease;
   -webkit-animation-fill-mode: both;
  
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-timing-function: ease;
   animation-fill-mode: both;
 }
