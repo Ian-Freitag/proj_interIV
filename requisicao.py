@@ -46,7 +46,6 @@ conn = sqlite3.connect('banco.db')
 cursor = conn.cursor()
 
 for offer in bigbase:
-    uniqueId = offer['UniqueId']
     maker = offer['Specification']['Make']['Value']
     model = offer['Specification']['Model']['Value']
     price = offer['Prices']['Price']
@@ -60,11 +59,11 @@ for offer in bigbase:
     city = offer['Seller']['City']
     state = offer['Seller']['State']
     
-    cursor.execute ("""INSERT INTO tb_veiculo (idunico, marca, modelo, valor_veic, versao_veic, ano_frab, ano_veic, carroceria, km_veic, cor, vendedor, cidade, estado) VALUES (?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?)""", (uniqueId, maker, model, price,version, yearfabrication, yearmodel,  bodytype, odometer, color, sellertype, city, state))
+    cursor.execute ("""INSERT INTO tb_veiculo ( marca, modelo, valor_veic, versao_veic, ano_frab, ano_veic, carroceria, km_veic, cor, vendedor, cidade, estado) VALUES (?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?)""", ( maker, model, price,version, yearfabrication, yearmodel,  bodytype, odometer, color, sellertype, city, state))
 
     conn.commit()
 
-    print(uniqueId,maker, model, price, version, yearfabrication, yearmodel,  bodytype, odometer, color, sellertype, city, state)
+    print(maker, model, price, version, yearfabrication, yearmodel,  bodytype, odometer, color, sellertype, city, state)
 
 
 ## COLOCANDO OS DADOS NO BANCO
