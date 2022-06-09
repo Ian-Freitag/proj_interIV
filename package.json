@@ -3,7 +3,6 @@
   "scripts": {
     "start": "nodemon app.js"
   },
-
   "author": "Pedro Esteves Paselar",
   "dependencies": {
     "apexcharts": "^3.35.3",
