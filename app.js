@@ -5,9 +5,19 @@ const port = 3000
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    res.render('pages/index')
-})
-app.listen(port, () => {
-  console.log(`App listening at port ${port}`)
+    res.render('index')
 })
 
+/*
+app.get('/pesquisar', (req, res) => {
+    res.render('views/pesquisar')
+})
+*/
+
+app.listen(port, () => {
+  console.log("Conectado com sucesso! Acesse o site: http://localhost:3000")
+})
+
+/*
+app.listen(port, () => console.log("Conectado com sucesso! Acesse o site: http://localhost:3000"));
+*/
