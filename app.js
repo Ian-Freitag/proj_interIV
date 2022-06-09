@@ -7,6 +7,9 @@ app.set('view engine', 'ejs')
 app.get('/', (req, res) => {
     res.render('pages/index')
 })
+app.get('/', (req, res) => {
+    res.render('pages/cadastro')
+})
 app.listen(port, () => {
   console.log(`App listening at port ${port}`)
 })
