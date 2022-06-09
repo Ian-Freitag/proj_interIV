@@ -98,7 +98,7 @@ section.main{
     align-items: center;
 }
 
-.search-box:hover.search-txt {
+.search-box:hover > .search-txt {
     width: 240px;
 }
 

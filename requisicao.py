@@ -28,7 +28,7 @@ bigbase = []
 ## aqui escolhe quantas paginas vao ser lidas 
 
 page = 1
-while page < 2:
+while page < 3:
     url = f"https://www.webmotors.com.br/api/search/car?url=https://www.webmotors.com.br/carros-usados%2Festoque%3Flkid%3D1000&actualPage={page}&displayPerPage=100"
 
     time.sleep(3)
