@@ -9,7 +9,17 @@ app.use(express.json());
 app.use('/',express.static(path.join(__dirname + '/css')));
 
 app.get('/', (req, res) => {
+<<<<<<< HEAD
     res.render('index')
+=======
+    res.render('pages/index')
+})
+app.get('/', (req, res) => {
+    res.render('pages/cadastro')
+})
+app.listen(port, () => {
+  console.log(`App listening at port ${port}`)
+>>>>>>> 20b68ad27d73e1467885b7adfb948c1d0a58817f
 })
 
 /*
