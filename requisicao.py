@@ -29,11 +29,7 @@ bigbase = []
 ## aqui escolhe quantas paginas vao ser lidas 
 
 page = 1
-<<<<<<< Updated upstream
 while page < 3:
-=======
-while page < 150:
->>>>>>> Stashed changes
     url = f"https://www.webmotors.com.br/api/search/car?url=https://www.webmotors.com.br/carros-usados%2Festoque%3Flkid%3D1000&actualPage={page}&displayPerPage=100"
 
     time.sleep(3)
