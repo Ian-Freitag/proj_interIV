@@ -1,8 +1,11 @@
 const express = require('express')
+const { use } = require('express/lib/application')
 const app = express()
 const port = 3000
 
 app.set('view engine', 'ejs')
+app.use(express.json());
+app.use(express.static(__dirname + '/public/s'));
 
 app.get('/', (req, res) => {
     res.render('index')
