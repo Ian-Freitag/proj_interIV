@@ -16,12 +16,14 @@ app.get('/cadastro', (req, res) => {
     res.render('cadastro')
 })
 
-
-/*
-app.get('/pesquisar', (req, res) => {
-    res.render('views/pesquisar')
+app.get('/ajuda', (req, res) => {
+    res.render('ajuda')
 })
-*/
+
+app.get('/sobre', (req, res) => {
+    res.render('sobre')
+})
+
 
 app.listen(port, () => {
   console.log("Conectado com sucesso! Acesse o site: http://localhost:3000")
