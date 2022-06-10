@@ -4,6 +4,8 @@ const app = express()
 const port = 3000
 const path = require('path')
 
+var sqlite3 = require('sqlite3').verbose();
+
 app.set('view engine', 'ejs')
 app.use(express.json());
 app.use('/public', express.static(path.join(__dirname + '/public')));
