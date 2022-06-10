@@ -16,29 +16,69 @@
     <script type="text/javascript">
       // Load Charts and the corechart and barchart packages.
       google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('current', {'packages':['treemap']});
 
       // Draw the pie chart and bar chart when Charts is loaded.
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
 
-        
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+
+        // grafico de arvore
+        var data = google.visualization.arrayToDataTable([
+          ['Location', 'Parent', 'Volume no mercado (size)', 'Valor médio (color)'],
+          ['Carroceria',    null,                 0,                               0],
+          ['Van',   'Carroceria',             84,                               99254],
+          ['Utilitário esportivo(SUV)', 'Carroceria',             4258,                               166003],
+          ['Sedã',      'Carroceria',             2192,                               251444],
+          ['Picape', 'Carroceria',             779,                               167231],
+          ['Minivan',    'Carroceria',             192,                               89040],
+          ['Hatchback',    'Carroceria',             1807,                               69302],
+          ['Cupê ',    'Carroceria',             195,                               519069],
+          ['Conversível',    'Carroceria',             94,                               534190]
+          
+
+          
         ]);
 
-        var piechart_options = {title:'Pie Chart: How Much Pizza I Ate Last Night',
-                       width:400,
-                       height:300};
-        var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
-        piechart.draw(data, piechart_options);
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, {
+          minColor: '#f00',
+          midColor: '#ddd',
+          maxColor: '#0d0',
+          headerHeight: 15,
+          fontColor: 'black',
+          showScale: true
+        });
+
+        // grafico de coluna
+        var data = google.visualization.arrayToDataTable([
+            ["Cor", "Quantidade", { role: "style" } ],
+            ["Branco", 2721, "#F5F5DC"],
+            ["Preto", 2469, "black"],
+            ["Prata", 1848, "silver"],
+            ["Cinza", 1406, "grey"]
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+        
+                       var options = {
+            title: "Cores mais populares",
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
 
 
         var data1 = new google.visualization.DataTable();
@@ -57,8 +97,8 @@
         ]);
 
         var barchart_options = {title:'Top Marcas com a quantidade de carros anunciados',
-                       width:450,
-                       height:300,
+                       width:600,
+                       height:400,
                        legend: 'none'};
         var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
         barchart.draw(data1, barchart_options);
@@ -132,8 +172,14 @@
 
     <table class="columns">
         <tr>
-          <td><div id="piechart_div" style="border: 1px solid #ccc"></div></td>
-          <td><div id="barchart_div" style="border: 1px solid #ccc"></div></td>
+          <td><div id="columnchart_values" style="border: 25px solid transparent"></div></td>
+          <td><div id="barchart_div" style="border: 25px solid transparent"></div></td>
+        </tr>
+    </table>
+
+    <table class="columns">
+        <tr>
+            <td><div id="chart_div" style="width: 900px; height: 500px; border: 25px solid transparent"></div></td>
         </tr>
     </table>
 
