@@ -25,6 +25,17 @@ app.get('/sobre', (req, res) => {
     res.render('sobre')
 })
 
+app.get('/volkswagen', (req, res) => {
+    res.render('volkswagen')
+})
+
+app.get('/audi', (req, res) => {
+    res.render('audi')
+})
+
+app.get('/chevrolet', (req, res) => {
+    res.render('chevrolet')
+})
 
 app.listen(port, () => {
   console.log("Conectado com sucesso! Acesse o site: http://localhost:3000")

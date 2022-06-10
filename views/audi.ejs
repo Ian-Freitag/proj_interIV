@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>P&aacute;gina Inicial</title>
-    <link rel="stylesheet" href="/public/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/audi.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" >
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
@@ -28,17 +28,10 @@
         var data = google.visualization.arrayToDataTable([
           ['Location', 'Parent', 'Volume no mercado (size)', 'Valor médio (color)'],
           ['Carroceria',    null,                 0,                               0],
-          ['Van',   'Carroceria',             84,                               99254],
-          ['Utilitário esportivo(SUV)', 'Carroceria',             4258,                               166003],
-          ['Sedã',      'Carroceria',             2192,                               251444],
-          ['Picape', 'Carroceria',             779,                               167231],
-          ['Minivan',    'Carroceria',             192,                               89040],
-          ['Hatchback',    'Carroceria',             1807,                               69302],
-          ['Cupê ',    'Carroceria',             195,                               519069],
-          ['Conversível',    'Carroceria',             94,                               534190]
-          
-
-          
+          ['Utilitário esportivo(SUV)', 'Carroceria',             40,                               249863],
+          ['Sedã',      'Carroceria',             25,                               245274],
+          ['Hatchback',    'Carroceria',             8,                               167428],
+          ['Cupê ',    'Carroceria',             9,                               785594]
         ]);
 
         tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
@@ -55,10 +48,10 @@
         // grafico de coluna
         var data = google.visualization.arrayToDataTable([
             ["Cor", "Quantidade", { role: "style" } ],
-            ["Branco", 2721, "#F5F5DC"],
-            ["Preto", 2469, "black"],
-            ["Prata", 1848, "silver"],
-            ["Cinza", 1406, "grey"]
+            ["Branco", 24, "#F5F5DC"],
+            ["Preto", 22, "black"],
+            ["Cinza", 15, "grey"],
+            ["Prata", 9, "silver"]
         ]);
 
         var view = new google.visualization.DataView(data);
@@ -85,18 +78,15 @@
         data1.addColumn('string', 'Marcas');
         data1.addColumn('number', 'Quantidade');
         data1.addRows([
-          ['VOLKSWAGEN', 1168],
-          ['CHEVROLET', 1065],
-          ['JEEP', 724],
-          ['FIAT', 683],
-          ['BMW', 562],
-          ['TOYOTA', 448],
-          ['HONDA', 448],
-          ['RENAULT', 430]
-          
+        ['Q3', 25],
+        ['A3', 10],
+        ['Q5', 7],
+        ['A4', 6],
+        ['TT', 5]
         ]);
+          
 
-        var barchart_options = {title:'Top Marcas com a quantidade de carros anunciados',
+        var barchart_options = {title:'Top Modelos com a quantidade de carros anunciados',
                        width:600,
                        height:400,
                        legend: 'none'};
