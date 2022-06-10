@@ -3,12 +3,107 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>P&aacute;gina Inicial</title>
     <link rel="stylesheet" href="/public/css/style.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E 
-    <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" >
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/all.min.css" />
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      // Load Charts and the corechart and barchart packages.
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('current', {'packages':['treemap']});
+
+      // Draw the pie chart and bar chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+
+        // grafico de arvore
+        var data = google.visualization.arrayToDataTable([
+          ['Location', 'Parent', 'Volume no mercado (size)', 'Valor médio (color)'],
+          ['Carroceria',    null,                 0,                               0],
+          ['Van',   'Carroceria',             84,                               99254],
+          ['Utilitário esportivo(SUV)', 'Carroceria',             4258,                               166003],
+          ['Sedã',      'Carroceria',             2192,                               251444],
+          ['Picape', 'Carroceria',             779,                               167231],
+          ['Minivan',    'Carroceria',             192,                               89040],
+          ['Hatchback',    'Carroceria',             1807,                               69302],
+          ['Cupê ',    'Carroceria',             195,                               519069],
+          ['Conversível',    'Carroceria',             94,                               534190]
+          
+
+          
+        ]);
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, {
+          minColor: '#f00',
+          midColor: '#ddd',
+          maxColor: '#0d0',
+          headerHeight: 15,
+          fontColor: 'black',
+          showScale: true
+        });
+
+        // grafico de coluna
+        var data = google.visualization.arrayToDataTable([
+            ["Cor", "Quantidade", { role: "style" } ],
+            ["Branco", 2721, "#F5F5DC"],
+            ["Preto", 2469, "black"],
+            ["Prata", 1848, "silver"],
+            ["Cinza", 1406, "grey"]
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+        
+                       var options = {
+            title: "Cores mais populares",
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
+
+
+        var data1 = new google.visualization.DataTable();
+        data1.addColumn('string', 'Marcas');
+        data1.addColumn('number', 'Quantidade');
+        data1.addRows([
+          ['VOLKSWAGEN', 1168],
+          ['CHEVROLET', 1065],
+          ['JEEP', 724],
+          ['FIAT', 683],
+          ['BMW', 562],
+          ['TOYOTA', 448],
+          ['HONDA', 448],
+          ['RENAULT', 430]
+          
+        ]);
+
+        var barchart_options = {title:'Top Marcas com a quantidade de carros anunciados',
+                       width:600,
+                       height:400,
+                       legend: 'none'};
+        var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+        barchart.draw(data1, barchart_options);
+      }
+    </script>
 </head>
 
 <body>
@@ -39,30 +134,55 @@
         <!--center-->
     </header>
 
+    <nav class="side-menu">
+        <ul>
+            <li><a href="#">AUDI</a></li>
+            <li><a href="#">BMW</a></li>
+            <li><a href="#">CHEVROLET</a></li>
+            <li><a href="#">CITROEN</a></li>
+            <li><a href="#">DODGE</a></li>
+            <li><a href="#">FERRARI</a></li>
+            <li><a href="#">FIAT</a></li>
+            <li><a href="#">FORD</a></li>
+            <li><a href="#">HONDA</a></li>
+            <li><a href="#">HYUNDAI</a></li>
+            <li><a href="#">JAGUAR</a></li>
+            <li><a href="#">JEEP</a></li>
+            <li><a href="#">LAMBORGHINI</a></li>
+            <li><a href="#">LAND ROVER</a></li>
+            <li><a href="#">LEXUS</a></li>
+            <li><a href="#">MASERATI</a></li>
+            <li><a href="#">MCLAREN</a></li>
+            <li><a href="#">MERCEDES-BENZ</a></li>
+            <li><a href="#">MINI</a></li>
+            <li><a href="#">MITSUBISHI</a></li>
+            <li><a href="#">NISSAN</a></li>
+            <li><a href="#">PEUGEOT</a></li>
+            <li><a href="#">PORSCHE</a></li>
+            <li><a href="#">RENAULT</a></li>
+            <li><a href="#">SMART</a></li>
+            <li><a href="#">SUBARU</a></li>
+            <li><a href="#">SUZUKI</a></li>
+            <li><a href="#">TESLA</a></li>
+            <li><a href="#">TOYOTA</a></li>
+            <li><a href="#">VOLKSWAGEN</a></li>
+            <li><a href="#">VOLVO</a></li>
+        </ul>
+    </nav>
 
-    <section class="main">
-        <div class="center">
-            <div class="main_cta">
-                <h2>Achando o seu carro dos sonhos em segundos!</h2>
-            </div>
-        </div>
-        <!--center-->
+    <table class="columns">
+        <tr>
+          <td><div id="columnchart_values" style="border: 25px solid transparent"></div></td>
+          <td><div id="barchart_div" style="border: 25px solid transparent"></div></td>
+        </tr>
+    </table>
 
+    <table class="columns">
+        <tr>
+            <td><div id="chart_div" style="width: 900px; height: 500px; border: 25px solid transparent"></div></td>
+        </tr>
+    </table>
 
-
-        <div class="search-box">
-            <meta charset="utf-8" />
-            <input type="text" class="search-txt" placeholder="Procure o seu pr&oacute;ximo carro">
-            <a href="#" class="search-btn">
-                <span style="color: #1CB5E0;">
-                    <i class="fa fa-search"></i>
-            </a>
-            </a>
-
-        </div>
-        <!--pesquisa-->
-
-    </section>
     <!--main-->
 </body>
 
